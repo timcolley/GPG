@@ -82,13 +82,16 @@ class rdIDML : NSObject {
         hasStandardClassDepartures = HasStandardClassDepartures
         firstClassValue = FirstClassValue
         data = Data
-        
-        print(data.description)
         /// container for the IDML output to be added
         var output = ""
         /// Counter for tracking the table row currently being built
         var currentRow = 0
+        
         addColumns(gridsize: gridSize)
+        
+        addHeader(row: String(currentRow), colSpan: String(numberOfCOLS)); currentRow += 1
+        addDepartureYear(row: String(currentRow), colSpan: String(numberOfCOLS), year: yearOne); currentRow += 1
+        
         
         if (gridSize == 3) {
             var Col1 = [[String]]()
@@ -99,6 +102,7 @@ class rdIDML : NSObject {
             while (data.count % 3 != 0) {
                 data.append(["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "paper"])
             }
+            
             while (i <= (((data.count)/3)-1)) { Col1.append(data[i]); i += 1;}
             while (i <= (((data.count)/3)*2)-1) { Col2.append(data[i]); i += 1;}
             while (i <= data.count-1) { Col3.append(data[i]); i += 1;}
@@ -109,151 +113,86 @@ class rdIDML : NSObject {
             while (Col1.count != highNumber) { Col1.append(["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "paper"]) }
             while (Col2.count != highNumber) { Col2.append(["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "paper"]) }
             while (Col3.count != highNumber) { Col3.append(["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "paper"]) }
-            var cellColor = "Gray"
-            var prevMonth = Col1[0][9]
-            
-            for i in 0 ... (Col1.count-1) {
-                if (Col1[i][9] == prevMonth || Col1[i][9] == "") {
-                    Col1[i].append(cellColor);
-                    prevMonth = Col1[i][9]
-                    if (i > 0 ) {
-                        Col1[i][9] = ""
-                    }
-                } else {
-                    if (cellColor == "paper") { cellColor = "Gray" } else { cellColor = "paper" }
-                    Col1[i].append(cellColor);
-                    prevMonth = Col1[i][9]
-                }
-                
-                if (Col1[i][23] == "") { Col1[i][23] = "paper"}
-            }
-            if (Col3.count >= 1) {
-                for i in 0 ... (Col2.count-1) {
-                    if (Col2[i][9] == prevMonth || Col2[i][9] == "") {
-                        Col2[i].append(cellColor);
-                        prevMonth = Col2[i][9]
-                        if (i > 0) {
-                            Col2[i][9] = ""
-                        }
-                    } else {
-                        if (cellColor == "paper") { cellColor = "Gray" } else { cellColor = "paper" }
-                        Col2[i].append(cellColor);
-                        prevMonth = Col2[i][9]
-                    }
-                    if (Col2[i][23] == "") { Col2[i][23] = "paper"}
-                }
-            }
-            if (Col3.count >= 1) {
-                for i in 0 ... (Col3.count-1) {
-                    if (Col3[i][9] == prevMonth || Col3[i][9] == "") {
-                        Col3[i].append(cellColor);
-                        prevMonth = Col3[i][9]
-                        if (i > 0) {
-                            Col3[i][9] = ""
-                        }
-                    } else {
-                        if (cellColor == "paper") { cellColor = "Gray" } else { cellColor = "paper" }
-                        Col3[i].append(cellColor);
-                        prevMonth = Col3[i][9]
-                    }
-                    if (Col3[i][23] == "") { Col3[i][23] = "paper"}
-                }
-            }
+
             for i in 0 ... (Col1.count-1) {
                 rowDefs.append(addRowDef(ownID: "", name: "\(String(currentRow))", textTopInset: "0", textLeftInset: "0", textBottomInset: "0", textRightInset: "0", clipContentToTextCell: "false", singleRowHeight: "11.338582677165356", minimumHeight: "11.338582677165356", autoGrow: " AutoGrow=\"false\" "))
-                addDeparture(row: String(currentRow), leftStrokeColor: "White", colStart: 0, monthValue: Col1[i][9], dayValue: Col1[i][8], priceValue: Col1[i][2], cellColor: Col1[i][23])
-                addDeparture(row: String(currentRow), leftStrokeColor: "White", colStart: 3, monthValue: Col2[i][9], dayValue: Col2[i][8], priceValue: Col2[i][2], cellColor: Col2[i][23])
-                addDeparture(row: String(currentRow), leftStrokeColor: "Regular", colStart: 6, monthValue: Col3[i][9], dayValue: Col3[i][8], priceValue: Col3[i][2], cellColor: Col3[i][23])
+                addDeparture(row: String(currentRow), leftStrokeColor: "White", colStart: 0, monthValue: Col1[i][9], dayValue: Col1[i][8], priceValue: Col1[i][2])
+                addDeparture(row: String(currentRow), leftStrokeColor: "White", colStart: 3, monthValue: Col2[i][9], dayValue: Col2[i][8], priceValue: Col2[i][2])
+                addDeparture(row: String(currentRow), leftStrokeColor: "Regular", colStart: 6, monthValue: Col3[i][9], dayValue: Col3[i][8], priceValue: Col3[i][2])
                 currentRow += 1
             }
         }
         
         if (gridSize == 2) {
-            var Col1 = [[String]]()
-            var Col2 = [[String]]()
-            if (doubleYear == true) {
-                print("DoubleYear:TRUE")
-                for element in data {
-                    if (element[10] == yearOne) { Col1.append(element) }
-                    if (element[10] == yearTwo) { Col2.append(element) }
-                }
+            var firstYear = [[String]]()
+            var secondYear = [[String]]()
+            var Y1Col1 = [[String]]()
+            var Y1Col2 = [[String]]()
+            
+            for element in data {
+                if (element[10] == yearOne) { firstYear.append(element) }
+            }
+            
+            if (firstYear.count == 1) {
+                firstYear.append(data[0])
+                firstYear.append(["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""])
             } else {
-                if (hasStandardClassDepartures == true) {
-                    print("SCD:TRUE")
-                    for element in data {
-                        if (element[5] == "First" || element[5] == "First & Standard") { Col1.append(element) }
-                        if (element[5] == "Standard") { Col2.append(element) }
-                    }
-                } else {
-                    if (data.count == 1) {
-                        print("DATAis1:TRUE")
-                        Col1.append(data[0])
-                        Col2.append(["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""])
-                    } else {
-                        var i = 0
-                        while (i <= (data.count/2)-1)     { Col1.append(data[i]); i += 1;}
-                        while (i <= data.count-1)         { Col2.append(data[i]); i += 1;}
-                    }
-                }
-            }
-            if (Col1.count < Col2.count ) { while (Col1.count != Col2.count) { Col1.append(["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]) } }
-            if (Col2.count < Col1.count ) { while (Col2.count != Col1.count) { Col2.append(["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]) } }
-            var cellColor = "Gray"
-            var prevMonth = Col1[0][9]
-            
-            for i in 0 ... (Col1.count-1) {
-                if (Col1[i][9] == prevMonth || Col1[i][9] == "") {
-                    Col1[i].append(cellColor);
-                    prevMonth = Col1[i][9]
-                    if (i > 0 ) {
-                        Col1[i][9] = ""
-                    }
-                } else {
-                    if (cellColor == "paper") { cellColor = "Gray" } else { cellColor = "paper" }
-                    Col1[i].append(cellColor);
-                    prevMonth = Col1[i][9]
-                }
-                if (Col1[i][23] == "") { Col1[i][23] = "paper"}
+                var i = 0
+                while (i <= (firstYear.count/2)-1)     { Y1Col1.append(firstYear[i]); i += 1;}
+                while (i <= firstYear.count-1)         { Y1Col2.append(firstYear[i]); i += 1;}
             }
             
-            if (doubleYear == true || hasStandardClassDepartures == true) { cellColor = "Gray"; prevMonth = Col2[0][9] }
+            if (Y1Col1.count < Y1Col2.count ) { while (Y1Col1.count != Y1Col2.count) { Y1Col1.append(["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]) } }
+            if (Y1Col2.count < Y1Col1.count ) { while (Y1Col2.count != Y1Col1.count) { Y1Col2.append(["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]) } }
             
-            for i in 0 ... (Col2.count-1) {
-                if (Col2[i][9] == prevMonth || Col2[i][9] == "") {
-                    Col2[i].append(cellColor);
-                    prevMonth = Col2[i][9]
-                    if (i > 0) {
-                        Col2[i][9] = ""
-                    }
-                } else {
-                    if (cellColor == "paper") { cellColor = "Gray" } else { cellColor = "paper" }
-                    Col2[i].append(cellColor);
-                    prevMonth = Col2[i][9]
-                }
-                if (Col2[i][23] == "") { Col2[i][23] = "paper"}
-            }
-            
-            for i in 0 ... (Col1.count-1) {
-                rowDefs.append(addRowDef(ownID: "", name: "\(String(currentRow))", textTopInset: "0", textLeftInset: "0", textBottomInset: "0", textRightInset: "0", clipContentToTextCell: "false", singleRowHeight: "11.338582677165356", minimumHeight: "11.338582677165356", autoGrow: " AutoGrow=\"false\" "))
-                if (doubleYear == true || hasStandardClassDepartures == true) {
-                    addDeparture(row: String(currentRow), leftStrokeColor: "Black", colStart: 0, monthValue: Col1[i][9], dayValue: Col1[i][8], priceValue: Col1[i][2], cellColor: Col1[i][23])
-                } else {
-                    addDeparture(row: String(currentRow), leftStrokeColor: "White", colStart: 0, monthValue: Col1[i][9], dayValue: Col1[i][8], priceValue: Col1[i][2], cellColor: Col1[i][23])
-                }
-                addDeparture(row: String(currentRow), leftStrokeColor: "Regular", colStart: 3, monthValue: Col2[i][9], dayValue: Col2[i][8], priceValue: Col2[i][2], cellColor: Col2[i][23])
+            for i in 0 ... (Y1Col1.count-1) {
+                rowDefs.append(addRowDef(ownID: "", name: "\(String(currentRow))", textTopInset: "0", textLeftInset: "2.834645669291339", textBottomInset: "0", textRightInset: "2.834645669291339", clipContentToTextCell: "false", singleRowHeight: "8.503937007874017", minimumHeight: "8.503937007874017", autoGrow: " AutoGrow=\"false\" "))
+                addDeparture(row: String(currentRow), leftStrokeColor: "Black", colStart: 0, monthValue: Y1Col1[i][9], dayValue: Y1Col1[i][8], priceValue: Y1Col1[i][2])
+                addDeparture(row: String(currentRow), leftStrokeColor: "", colStart: 2, monthValue: Y1Col2[i][9], dayValue: Y1Col2[i][8], priceValue: Y1Col2[i][2])
                 currentRow += 1
             }
+            
+            if (doubleYear == true) {
+                var Y2Col1 = [[String]]()
+                var Y2Col2 = [[String]]()
+                
+                for element in data {
+                    if (element[10] == yearTwo) { secondYear.append(element) }
+                }
+                
+                if (secondYear.count == 1) {
+                    firstYear.append(data[0])
+                    firstYear.append(["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""])
+                } else {
+                    var i = 0
+                    while (i <= (secondYear.count/2)-1)     { Y2Col1.append(secondYear[i]); i += 1;}
+                    while (i <= secondYear.count-1)         { Y2Col2.append(secondYear[i]); i += 1;}
+                }
+                if (Y2Col1.count < Y2Col2.count ) { while (Y2Col1.count != Y2Col2.count) { Y2Col1.append(["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]) } }
+                if (Y2Col2.count < Y2Col1.count ) { while (Y2Col2.count != Y2Col1.count) { Y2Col2.append(["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]) } }
+                addDepartureYear(row: String(currentRow), colSpan: String(numberOfCOLS), year: yearTwo); currentRow += 1
+                
+                for i in 0 ... (Y2Col1.count-1) {
+                    rowDefs.append(addRowDef(ownID: "", name: "\(String(currentRow))", textTopInset: "0", textLeftInset: "2.834645669291339", textBottomInset: "0", textRightInset: "2.834645669291339", clipContentToTextCell: "false", singleRowHeight: "8.503937007874017", minimumHeight: "8.503937007874017", autoGrow: " AutoGrow=\"false\" "))
+                    addDeparture(row: String(currentRow), leftStrokeColor: "Black", colStart: 0, monthValue: Y2Col1[i][9], dayValue: Y2Col1[i][8], priceValue: Y2Col1[i][2])
+                    addDeparture(row: String(currentRow), leftStrokeColor: "", colStart: 2, monthValue: Y2Col2[i][9], dayValue: Y2Col2[i][8], priceValue: Y2Col2[i][2])
+                    currentRow += 1
+                }
+            }
         }
+        
+        
+        
+        
         
         if (regionalDepartures == true) {
             addSpacer(row: String(currentRow), colSpan: String(numberOfCOLS)); currentRow += 1
             addRegionalDepartureLocations(row: String(currentRow), colSpan: String(numberOfCOLS)); currentRow += 1
             addRegionalDeparturePrices(row: String(currentRow), colSpan: String(numberOfCOLS)); currentRow += 1
         }
-        addSpacer(row: String(currentRow), colSpan: String(numberOfCOLS)); currentRow += 1
-        currentRow += 1
+        addMealKeys(row: String(currentRow), colSpan: String(numberOfCOLS)); currentRow += 1
         addSmallPrint(row: String(currentRow), colSpan: String(numberOfCOLS)); currentRow += 1
-        output.append(addTableDef(rows: "\(String(currentRow))", cols: "\(gridSize*3)"))
+        output.append(addTableDef(rows: "\(String(currentRow))", cols: "\(gridSize*2)"))
         output.append(rowDefs)
         output.append(colDefs)
         output.append(cellDefs)
@@ -276,18 +215,16 @@ class rdIDML : NSObject {
         switch (gridsize) {
         case 2 :
             for _ in 0 ..< gridsize {
-                colDefs.append(addColDef(ownID: "", name: "\(colTrack)", textTopInset: "0", textLeftInset: "0", textBottomInset: "0", textRightInset: "0", clipContentToTextCell: "false", singleColumnWidth: "28.34645669291339")); colTrack += 1;
-                colDefs.append(addColDef(ownID: "", name: "\(colTrack)", textTopInset: "0", textLeftInset: "0", textBottomInset: "0", textRightInset: "0", clipContentToTextCell: "false", singleColumnWidth: "25.511811023622048")); colTrack += 1;
-                colDefs.append(addColDef(ownID: "", name: "\(colTrack)", textTopInset: "0", textLeftInset: "0", textBottomInset: "0", textRightInset: "0", clipContentToTextCell: "false", singleColumnWidth: "79.370078736197474")); colTrack += 1;
-                numberOfCOLS = 6
+                colDefs.append(addColDef(ownID: "", name: "\(colTrack)", textTopInset: "0", textLeftInset: "2.834645669291339", textBottomInset: "0", textRightInset: "2.834645669291339", clipContentToTextCell: "false", singleColumnWidth: "61.653543307086615")); colTrack += 1;
+                colDefs.append(addColDef(ownID: "", name: "\(colTrack)", textTopInset: "0", textLeftInset: "2.834645669291339", textBottomInset: "0", textRightInset: "2.834645669291339", clipContentToTextCell: "false", singleColumnWidth: "28.34645669291339")); colTrack += 1;
+                numberOfCOLS = 4
             }
             break;
         case 3:
             for _ in 0 ..< gridsize {
-                colDefs.append(addColDef(ownID: "", name: "\(colTrack)", textTopInset: "0", textLeftInset: "0", textBottomInset: "0", textRightInset: "0", clipContentToTextCell: "false", singleColumnWidth: "31.181102362218496")); colTrack += 1;
-                colDefs.append(addColDef(ownID: "", name: "\(colTrack)", textTopInset: "0", textLeftInset: "0", textBottomInset: "0", textRightInset: "0", clipContentToTextCell: "false", singleColumnWidth: "22.66716535433071")); colTrack += 1;
-                colDefs.append(addColDef(ownID: "", name: "\(colTrack)", textTopInset: "0", textLeftInset: "0", textBottomInset: "0", textRightInset: "0", clipContentToTextCell: "false", singleColumnWidth: "34.01574803149607")); colTrack += 1;
-                numberOfCOLS = 9
+                colDefs.append(addColDef(ownID: "", name: "\(colTrack)", textTopInset: "0", textLeftInset: "2.834645669291339", textBottomInset: "0", textRightInset: "2.834645669291339", clipContentToTextCell: "false", singleColumnWidth: "31.69133858267717")); colTrack += 1;
+                colDefs.append(addColDef(ownID: "", name: "\(colTrack)", textTopInset: "0", textLeftInset: "2.834645669291339", textBottomInset: "0", textRightInset: "2.834645669291339", clipContentToTextCell: "false", singleColumnWidth: "28.34645669291339")); colTrack += 1;
+                numberOfCOLS = 6
             }
             break;
         default:
@@ -309,12 +246,19 @@ class rdIDML : NSObject {
      - Returns: **String**, The departure: a block of three cells to append to the grid.
      
      */
-    func addDeparture(row: String, leftStrokeColor: String, colStart: Int, monthValue: String, dayValue: String, priceValue: String, cellColor: String) {
+    func addDeparture(row: String, leftStrokeColor: String, colStart: Int, monthValue: String, dayValue: String, priceValue: String) {
         var pricevalue = priceValue
-        var monthCellColor: String!
-        var dayCellColor: String!
-        var priceCellColor: String!
-        var soldout: String!
+        var datesCellColor = "Table Alt Dates NoStroke"
+        var priceCellColor = "Table Alt Price NoStroke"
+        var soldout = "CharacterStyle/SOLD OUT"
+        
+        if (Int(row)! % 2 == 0) {
+            datesCellColor = "Table Dates NoStroke"
+            priceCellColor = "Table Price NoStroke"
+        }
+        
+        if (leftStrokeColor == "Black" && priceCellColor == "Table Price NoStroke") { priceCellColor = "Table Price Stroke" }
+        if (leftStrokeColor == "Black" && priceCellColor == "Table Alt Price NoStroke") { priceCellColor = "Table Alt Price Stroke" }
         
         if (priceValue.count == 4) { pricevalue = priceValue; pricevalue.insert(",", at: pricevalue.index(pricevalue.startIndex, offsetBy: 1)) }
         if (priceValue.count == 5) { pricevalue = priceValue; pricevalue.insert(",", at: pricevalue.index(pricevalue.startIndex, offsetBy: 2)) }
@@ -322,8 +266,9 @@ class rdIDML : NSObject {
 
         if (priceValue == "SOLD OUT") { soldout = "CharacterStyle/SOLD OUT" } else { soldout = "CharacterStyle/$ID/[No character style]" }
         
-        cellDefs.append(addCell(  ownID: "", name: "\(colStart):\(row)", rowSpan: "1", colSpan:  "1", cellType: "TextTypeCell", textTopInset: "0", textLeftInset:  "4.251968503937009", textBottomInset: "0", textRightInset: "0", appliedCellStyle: "CellStyle/\(monthCellColor!)", appliedParagraphStyle: "ParagraphStyle/Table Month", appliedCharacterStyle: "CharacterStyle/$ID/[No character style]", content: monthValue))
-        cellDefs.append(addCell(  ownID: "", name: "\(colStart + 1):\(row)", rowSpan: "1", colSpan:  "1", cellType: "TextTypeCell", textTopInset: "0", textLeftInset:  "0", textBottomInset: "0", textRightInset: "0", appliedCellStyle: "CellStyle/\(dayCellColor!)", appliedParagraphStyle: "ParagraphStyle/Table Day", appliedCharacterStyle: "CharacterStyle/$ID/[No character style]", content: dayValue))
+        cellDefs.append(addCell(  ownID: "", name: "\(colStart):\(row)", rowSpan: "1", colSpan:  "1", cellType: "TextTypeCell", textTopInset: "0", textLeftInset:  "2.834645669291339", textBottomInset: "0", textRightInset: "2.834645669291339", appliedCellStyle: "CellStyle/\(datesCellColor)", appliedParagraphStyle: "ParagraphStyle/Table Dates", appliedCharacterStyle: "CharacterStyle/$ID/[No character style]", content: "\(monthValue) \(dayValue)"))
+        
+        cellDefs.append(addCell(  ownID: "", name: "\(colStart + 1):\(row)", rowSpan: "1", colSpan:  "1", cellType: "TextTypeCell", textTopInset: "0", textLeftInset:  "2.834645669291339", textBottomInset: "0", textRightInset: "2.834645669291339", appliedCellStyle: "CellStyle/\(priceCellColor)", appliedParagraphStyle: "ParagraphStyle/Table Price", appliedCharacterStyle: soldout, content: "\(pricevalue)"))
     }
     
     
@@ -338,7 +283,8 @@ class rdIDML : NSObject {
      
      */
     func addRegionalDepartureLocations(row: String, colSpan: String) {
-        // $REGIONAL_DEPARTURE_LIST$
+        rowDefs.append(addRowDef( ownID: "", name: "\(row)", textTopInset: "0", textLeftInset: "2.834645669291339", textBottomInset: "0", textRightInset: "2.834645669291339", clipContentToTextCell: "false", singleRowHeight: "8.508661417322837", minimumHeight: "8.508661417322837", autoGrow: " AutoGrow=\"true\"" ))
+        cellDefs.append(addCell(  ownID: "", name: "0:\(row)", rowSpan: "1", colSpan:  "\(colSpan)", cellType: "TextTypeCell", textTopInset: "0", textLeftInset:  "2.834645669291339", textBottomInset: "1.415645669291339", textRightInset: "2.834645669291339", appliedCellStyle: "CellStyle/Table RegDeps Locations", appliedParagraphStyle: "ParagraphStyle/Table RegDep Locations", appliedCharacterStyle: "CharacterStyle/$ID/[No character style]", content: "$REGIONAL_DEPARTURE_LIST$" ))
     }
     
     /**
@@ -351,7 +297,23 @@ class rdIDML : NSObject {
      
      */
     func addRegionalDeparturePrices(row: String, colSpan: String) {
-        //$REGIONAL_DEPARTURE_LIST$
+        rowDefs.append(addRowDef( ownID: "", name: "\(row)", textTopInset: "0", textLeftInset: "2.834645669291339", textBottomInset: "0", textRightInset: "2.834645669291339", clipContentToTextCell: "false", singleRowHeight: "8.508661417322837", minimumHeight: "8.508661417322837", autoGrow: " AutoGrow=\"true\"" ))
+        cellDefs.append(addCell(  ownID: "", name: "0:\(row)", rowSpan: "1", colSpan:  "\(colSpan)", cellType: "TextTypeCell", textTopInset: "0", textLeftInset:  "2.834645669291339", textBottomInset: "1.415645669291339", textRightInset: "2.834645669291339", appliedCellStyle: "CellStyle/Table RegDeps Prices", appliedParagraphStyle: "ParagraphStyle/Table RegDep Prices", appliedCharacterStyle: "CharacterStyle/$ID/[No character style]", content: "$REGIONAL_DEPARTURE_PRICES$" ))
+    }
+    
+    /**
+     builds and returns the IDML required for Meal Keys row
+     
+     -  parameter row:                 **String**,         The row number of this table element. Since IDML requires the the 'name' parameter be used to track the rows and column locations of a cell, this needs to be dynamic.
+     -  parameter colSpan:             **String**,         The number of columns to span, used to provide a horizontally merged cell within a row.
+     
+     - Returns: **String**, The regional departures supplement prices element of the table.
+     
+     */
+    func addMealKeys(row: String, colSpan: String) {
+        rowDefs.append(addRowDef( ownID: "", name: "\(row)", textTopInset: "0", textLeftInset: "2.834645669291339", textBottomInset: "0", textRightInset: "2.834645669291339", clipContentToTextCell: "false", singleRowHeight: "8.508661417322837", minimumHeight: "8.508661417322837", autoGrow: " AutoGrow=\"true\"" ))
+        
+        cellDefs.append(addCell(  ownID: "", name: "0:\(row)", rowSpan: "1", colSpan:  "\(colSpan)", cellType: "TextTypeCell", textTopInset: "1.4173228346456694", textLeftInset:  "2.834645669291339", textBottomInset: "1.415645669291339", textRightInset: "2.834645669291339", appliedCellStyle: "CellStyle/Table MealKeys", appliedParagraphStyle: "ParagraphStyle/Table MealKeys", appliedCharacterStyle: "CharacterStyle/$ID/[No character style]", content: "B=Breakfast, L=Lunch, D=Dinner. These meals, where shown are included in the price of your holiday." ))
     }
     
     /**
@@ -364,7 +326,8 @@ class rdIDML : NSObject {
      
      */
     func addSpacer(row: String, colSpan: String) {
-        
+        rowDefs.append(addRowDef( ownID: "", name: "\(row)", textTopInset: "0", textLeftInset: "2.834645669291339", textBottomInset: "0", textRightInset: "0", clipContentToTextCell: "false", singleRowHeight: "2.9990551181102365", minimumHeight: "2.9990551181102365", autoGrow: "AutoGrow=\"false\"" ))
+        cellDefs.append(addCell(  ownID: "", name: "0:\(row)", rowSpan: "1", colSpan:  "\(colSpan)", cellType: "TextTypeCell", textTopInset: "0", textLeftInset:  "2.834645669291339", textBottomInset: "0", textRightInset: "0", appliedCellStyle: "CellStyle/Table Spacer", appliedParagraphStyle: "ParagraphStyle/$ID/NormalParagraphStyle", appliedCharacterStyle: "CharacterStyle/$ID/[No character style]", content: "" ))
     }
     
     /**
@@ -377,8 +340,36 @@ class rdIDML : NSObject {
      
      */
     func addSmallPrint(row: String, colSpan: String) {
-        rowDefs.append(addRowDef( ownID: "", name: "\(row)", textTopInset: "5.669291338582678", textLeftInset: "4.251968503937009", textBottomInset: "0", textRightInset: "4.251968503937009", clipContentToTextCell: "false", singleRowHeight: "28.34645669291339", minimumHeight: "28.34645669291339", autoGrow: "" ))
-        cellDefs.append(addCell(  ownID: "", name: "0:\(row)", rowSpan: "1", colSpan:  "\(colSpan)", cellType: "TextTypeCell", textTopInset: "5.669291338582678", textLeftInset:  "2.834645669291339", textBottomInset: "0", textRightInset: "0", appliedCellStyle: "CellStyle/CellSmallPrint", appliedParagraphStyle: "ParagraphStyle/Table Small Print", appliedCharacterStyle: "CharacterStyle/$ID/[No character style]", content: "$SMALLPRINT$" ))
+        rowDefs.append(addRowDef( ownID: "", name: "\(row)", textTopInset: "0", textLeftInset: "2.834645669291339", textBottomInset: "0", textRightInset: "2.834645669291339", clipContentToTextCell: "false", singleRowHeight: "28.34645669291339", minimumHeight: "28.34645669291339", autoGrow: "AutoGrow=\"True\"" ))
+        cellDefs.append(addCell(  ownID: "", name: "0:\(row)", rowSpan: "1", colSpan:  "\(colSpan)", cellType: "TextTypeCell", textTopInset: "0", textLeftInset:  "2.834645669291339", textBottomInset: "0", textRightInset: "2.834645669291339", appliedCellStyle: "CellStyle/Table SmallPrint", appliedParagraphStyle: "ParagraphStyle/Table SmallPrint", appliedCharacterStyle: "CharacterStyle/$ID/[No character style]", content: "$SMALLPRINT$" ))
+    }
+    
+    /**
+     builds and returns the IDML required for the table Header. This specifies all options in IDML for the table including columns & rows
+     
+     -  parameter row:              **String**,         The number of rows required by the table
+     -  parameter colSpan:          **String**,         The number of columns required by the table
+     
+     - Returns: **String**, the table definition.
+     
+     */
+    func addHeader(row: String, colSpan: String) {
+        rowDefs.append(addRowDef( ownID: "", name: "0", textTopInset: "0", textLeftInset: "2.834645669291339", textBottomInset: "0", textRightInset: "2.834645669291339", clipContentToTextCell: "false", singleRowHeight: "18.708661417322837", minimumHeight: "18.708661417322837", autoGrow: "" ))
+        cellDefs.append(addCell(  ownID: "", name: "0:0", rowSpan: "1", colSpan:  "\(colSpan)", cellType: "TextTypeCell", textTopInset: "0", textLeftInset:  "2.834645669291339", textBottomInset: "0", textRightInset: "2.834645669291339", appliedCellStyle: "CellStyle/Table Header", appliedParagraphStyle: "ParagraphStyle/Table Header", appliedCharacterStyle: "CharacterStyle/$ID/[No character style]", content: "Departures" ))
+    }
+    
+    /**
+     builds and returns the IDML required for the Year, Duration and tour code field. This specifies all options in IDML for the table including columns & rows
+     
+     -  parameter row:              **String**,         The number of rows required by the table
+     -  parameter colSpan:          **String**,         The number of columns required by the table
+     
+     - Returns: **String**, the table definition.
+     
+     */
+    func addDepartureYear(row: String, colSpan: String, year: String) {
+        rowDefs.append(addRowDef( ownID: "", name: "\(row)", textTopInset: "0", textLeftInset: "2.834645669291339", textBottomInset: "0", textRightInset: "2.834645669291339", clipContentToTextCell: "false", singleRowHeight: "11.508661417322837", minimumHeight: "11.508661417322837", autoGrow: "" ))
+        cellDefs.append(addCell(  ownID: "", name: "0:\(row)", rowSpan: "1", colSpan:  "\(colSpan)", cellType: "TextTypeCell", textTopInset: "0", textLeftInset:  "2.834645669291339", textBottomInset: "2.834645669291339", textRightInset: "2.834645669291339", appliedCellStyle: "CellStyle/Table Departure &amp; Tour Code", appliedParagraphStyle: "ParagraphStyle/Table Departure &amp; Tour Code", appliedCharacterStyle: "CharacterStyle/$ID/[No character style]", content: "\(year) Departures from $DEPARTURE_LOCATION$, Tour Code: $TOUR_CODE$ " ))
     }
     
     /**

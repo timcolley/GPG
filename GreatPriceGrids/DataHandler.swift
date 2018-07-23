@@ -74,7 +74,7 @@ class DataHandler : NSObject {
     var hasFlyHome: Bool!
     ///Do we want a lates banner?
     var hasLatesBanner: Bool!
-    ///Contaner to hold raw data before processing. Really shouldn't be here as it's a result of lazy coding. Should be removed in future refactoring.
+    ///Contaner to hold raw data before processing. Used to reprocess the data for RD grids
     var rawdata = [[String]]()
     
     /**
@@ -86,13 +86,14 @@ class DataHandler : NSObject {
      
      - Returns: void
      */
-    init(tourCode: String, startDate: String, endDate: String) {
+    init(tourCode: String, startDate: String, endDate: String, limit: Int) {
         super.init()
+
         if (startDate == "" || endDate == "") {
-            setTourData(tourData: DBManager.shared.returnTours(tourCode: tourCode))
+            setTourData(tourData: DBManager.shared.returnTours(tourCode: tourCode), limit: limit)
             setTourCode(tc: tourCode)
         } else {
-            setTourData(tourData: DBManager.shared.returnToursInDateRange(tourCode: tourCode, startDate: startDate, endDate: endDate))
+            setTourData(tourData: DBManager.shared.returnToursInDateRange(tourCode: tourCode, startDate: startDate, endDate: endDate), limit: limit)
             setTourCode(tc: tourCode)
         }
         
@@ -104,9 +105,9 @@ class DataHandler : NSObject {
      - Parameter tourData: **[[String]]** a 3d Array of tour information
  
      */
-    func setTourData(tourData: [[String]]) {
+    func setTourData(tourData: [[String]], limit: Int) {
         rawdata = tourData
-        tours = cleanTourDates(dates: setSoldOuts(tourData: tourData)) //import & scrub the data
+        tours = cleanTourDates(dates: setSoldOuts(tourData: tourData), limit: limit) //import & scrub the data
         setDoubleYear()                         //Check the status of the year codes
         setRailClass()                          //Set the default rail class (TO DO : and check for standard class departures, those need 3/4 column grids)
         setDepartureLocation()                  //Set the default Departure Location for this tour.
@@ -395,9 +396,11 @@ class DataHandler : NSObject {
      */
     func setSoldOuts(tourData: [[String]]) -> [[String]] {
         var toursData = tourData
-        for i in 0 ... (toursData.count-1) {
-            if (toursData[i][22] == toursData[i][21]) {
-                toursData[i][2] = "SOLD OUT"
+        if (tours.count > 0) {
+            for i in 0 ... (toursData.count-1) {
+                if (toursData[i][22] == toursData[i][21]) {
+                    toursData[i][2] = "SOLD OUT"
+                }
             }
         }
         return toursData
@@ -413,7 +416,7 @@ class DataHandler : NSObject {
      - TODO: Need to stop this from throwing a wobbley every time there is only one departure
      
      */
-    func cleanTourDates (dates: [[String]]) -> [[String]] {
+    func cleanTourDates (dates: [[String]], limit: Int) -> [[String]] {
         tours = dates
         var previousPrice: String!
         var previousMonth: String!
@@ -466,7 +469,7 @@ class DataHandler : NSObject {
             if (i-1 >= 0) {
                 if (tours[i][9] == previousMonth) {
                     if (tours[i][2] == previousPrice) {
-                        if(cellLimit < 2) {
+                        if(cellLimit < limit) {
                             indexesToRemove.append(i)
                             tours[i-1][8].append(", " + tours[i][8])
                             cellLimit += 1

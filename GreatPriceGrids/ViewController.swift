@@ -143,7 +143,7 @@ class ViewController: NSViewController {
      
      */
     @IBAction func pubTourCode_Change(_ sender: Any) {
-        configure(input: DataHandler(tourCode: pubTourCode.selectedItem!.title, startDate: "", endDate: ""))
+        configure(input: DataHandler(tourCode: pubTourCode.selectedItem!.title, startDate: "", endDate: "", limit: 3))
         dateSpinStart.dateValue = data.startDate
         dateSpinEnd.dateValue = data.endDate
     }
@@ -157,9 +157,19 @@ class ViewController: NSViewController {
     @IBAction func pubFormatSelect(_ sender: Any) {
         if (pubFormat.selectedItem!.title == "GRJ") {
             gridFormat = "GRJ"
+            txtSmallPrint.stringValue = "E=Eurostar Meal, B=Breakfast, L=Lunch, D=Dinner. These meals, where shown are included in the price of your holiday. Please note, an increased deposit may be required for upgrades and variations. Please read our Booking Conditions available on request or online before you book"
+            chkAddFlyHome.isEnabled = true
+            chkAddFlights.isEnabled = true
+            chkRemoveTitle.isEnabled = true
+            chkAddLates.isEnabled = true
         }
         if (pubFormat.selectedItem!.title == "RD") {
             gridFormat = "RD"
+            txtSmallPrint.stringValue = "Please note, an increased deposit may be required for upgrades and variations. Please read our Booking Conditions available on request or online before you book"
+            chkAddFlyHome.isEnabled = false
+            chkAddFlights.isEnabled = false
+            chkRemoveTitle.isEnabled = false
+            chkAddLates.isEnabled = false
         }
     }
     
@@ -323,7 +333,7 @@ class ViewController: NSViewController {
         if (dateSpinStart.dateValue > dateSpinEnd.dateValue) {
             dateSpinStart.dateValue = data.startDate
         } else {
-        configure(input: DataHandler(tourCode: pubTourCode.selectedItem!.title, startDate: cleanDate(input: dateSpinStart.dateValue), endDate: cleanDate(input: dateSpinEnd.dateValue)))
+            configure(input: DataHandler(tourCode: pubTourCode.selectedItem!.title, startDate: cleanDate(input: dateSpinStart.dateValue), endDate: cleanDate(input: dateSpinEnd.dateValue), limit: 3))
         }
     }
     
@@ -337,7 +347,7 @@ class ViewController: NSViewController {
         if (dateSpinEnd.dateValue < dateSpinStart.dateValue) {
             dateSpinEnd.dateValue = data.endDate
         } else {
-            configure(input: DataHandler(tourCode: pubTourCode.selectedItem!.title, startDate: cleanDate(input: dateSpinStart.dateValue), endDate: cleanDate(input: dateSpinEnd.dateValue)))
+            configure(input: DataHandler(tourCode: pubTourCode.selectedItem!.title, startDate: cleanDate(input: dateSpinStart.dateValue), endDate: cleanDate(input: dateSpinEnd.dateValue), limit: 3))
         }
     }
     
@@ -448,9 +458,41 @@ class ViewController: NSViewController {
      */
     @IBAction func btnExecute(_ sender: Any) {
         IDML = idmlGenerator()
+        var newData = data.cleanTourDates(dates: data.setSoldOuts(tourData: data.rawdata), limit: 4)
         var firstClassText = ""
         if (data.hasRailClass1) { firstClassText = "First Class Rail" }
         if (data.hasRailClass12) { firstClassText = "First & Standard Class Rail" }
+        if pubFormat.selectedItem!.title == "RD" {
+            newData = data.cleanTourDates(dates: data.rawdata, limit: 5)
+            if (newData.count >= 15) {
+                newData = data.cleanTourDates(dates: data.setSoldOuts(tourData: data.rawdata), limit: 3)
+            }
+        } else {
+            newData = data.cleanTourDates(dates: data.setSoldOuts(tourData: data.rawdata), limit: 3)
+        }
+        
+         print ("tourTitle: \(txtOverrideTourTitle.stringValue)")
+         print ("duration: \(txtOverrideNumDays.stringValue)")
+         print ("departureLocation: \(txtOverrideDepartureLocation.stringValue)")
+         print ("tourCode: \(txtOverrideTourCode.stringValue)")
+         print ("railClass: \(data.railClass)")
+         print ("rdl: \(txtRegionalDeparturesList.stringValue)")
+         print ("rdp: \(txtRegionalDeparturesPricing.stringValue)")
+         print ("smallPrint: \(txtSmallPrint.stringValue)")
+         print ("deposit: \(txtOverrideDeposit.stringValue)")
+         print ("singlesupp: \(txtOverrideSingleSupp.stringValue)")
+         print ("LatesPanel: \(data.hasLatesBanner)")
+         print ("HasFlights: \(data.hasFlights)")
+         print ("RegDeps:    \(data.hasRegionalDepartures)")
+         print ("FlyHome:    \(data.hasFlyHome)")
+         print ("DoubleYearMode: \(data.doubleYearMode)")
+         print ("DiscardTourTitle: \(data.removeTourTitle)")
+         print ("YearOne: \(data.yearOne)")
+         print ("YearTwo: \(data.yearTwo)")
+         print ("data: \(newData.description)")
+         print ("HasStandardClassDepartures: \(data.getStandardOptionStatus())")
+         print ("firstClassValue: \(firstClassText)")
+         print ("format: \(gridFormat)")
         
         IDML.buldGrid(
                 tourTitle: txtOverrideTourTitle.stringValue,
@@ -471,7 +513,7 @@ class ViewController: NSViewController {
                 DiscardTourTitle: data.removeTourTitle,
                 YearOne: data.yearOne,
                 YearTwo: data.yearTwo,
-                data: data.tours,
+                data: newData,
                 HasStandardClassDepartures: data.getStandardOptionStatus(),
                 firstClassValue: firstClassText,
                 format: gridFormat

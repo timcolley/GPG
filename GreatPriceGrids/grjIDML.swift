@@ -83,7 +83,6 @@ class grjIDML : NSObject {
         firstClassValue = FirstClassValue
         data = Data
         
-        print(data.description)
         /// container for the IDML output to be added
         var output = ""
         /// Counter for tracking the table row currently being built

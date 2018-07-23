@@ -130,21 +130,15 @@ class idmlGenerator : NSObject {
                 if (data.count <= 6 && DoubleYearMode == false) { gridColumns = 2 }
                 if (data.count <= 6 && DoubleYearMode == true)  { gridColumns = 4 }
                 if (data.count <= 4 && DoubleYearMode == true) { gridColumns = 2 }
+                if (data.count > 6 && data.count <= 9 && DoubleYearMode == false)  { gridColumns = 3 }
+                if (data.count > 9 ) { gridColumns = 4 }
+                if (DoubleYearMode == false && HasStandardClassDepartures == true) { gridColumns = 2 }
+                if (DoubleYearMode == true && HasStandardClassDepartures == true) { gridColumns = 4 }
+                            myString.append(grjGenerator.buildIDMLGrid(gridSize: gridColumns, doubleYear: DoubleYearMode, removeTourTitle: discardTourTitle, LatesBanner: latesBanner, regionalDepartures: regDeps, HasFlights: hasFlights, YearOne: yearOne, YearTwo: yearTwo, HasStandardClassDepartures: HasStandardClassDepartures, FirstClassValue: firstClassValue, hasFlyHome: FlyHome, Data: data))
             }
-            
             if (format == "RD") {
                 gridColumns = 3
-                if (data.count <= 13 ) { gridColumns = 2 }
-            }
-            
-            if (data.count > 6 && data.count <= 9 && DoubleYearMode == false)  { gridColumns = 3 }
-            if (data.count > 9 ) { gridColumns = 4 }
-            if (DoubleYearMode == false && HasStandardClassDepartures == true) { gridColumns = 2 }
-            if (DoubleYearMode == true && HasStandardClassDepartures == true) { gridColumns = 4 }
-            if (format == "GRJ") {
-            myString.append(grjGenerator.buildIDMLGrid(gridSize: gridColumns, doubleYear: DoubleYearMode, removeTourTitle: discardTourTitle, LatesBanner: latesBanner, regionalDepartures: regDeps, HasFlights: hasFlights, YearOne: yearOne, YearTwo: yearTwo, HasStandardClassDepartures: HasStandardClassDepartures, FirstClassValue: firstClassValue, hasFlyHome: FlyHome, Data: data))
-            }
-            if (format == "RD") {
+                if (data.count <= 15 ) { gridColumns = 2 }
                 myString.append(rdGenerator.buildIDMLGrid(gridSize: gridColumns, doubleYear: DoubleYearMode, removeTourTitle: discardTourTitle, LatesBanner: latesBanner, regionalDepartures: regDeps, HasFlights: hasFlights, YearOne: yearOne, YearTwo: yearTwo, HasStandardClassDepartures: HasStandardClassDepartures, FirstClassValue: firstClassValue, hasFlyHome: FlyHome, Data: data))
             }
             
