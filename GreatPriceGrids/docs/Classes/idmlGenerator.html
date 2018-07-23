@@ -1,0 +1,2513 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>idmlGenerator Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/idmlGenerator" class="dashAnchor"></a>
+    <a title="idmlGenerator Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Home</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        idmlGenerator Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+            <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Userguide.html">User Guide</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Userguide/firstlook.html">First look</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Userguide/updatedatabase.html">Update database</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Userguide/tourselection.html">Tour selection</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Userguide/previewpanel.html">Preview panel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Userguide/filterbydate.html">Filter by date</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Userguide/standardoptions.html">Standard options</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Userguide/advancedoptions.html">Advanced options</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Userguide/buildingyourgrid.html">Building your grid</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Userguide/usingyourgrid.html">Using your new grid</a>
+              </li>
+            </ul>
+          </li>
+			<li class="nav-group-name">
+            <a href="../Classes.html">Programming Reference</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AppDelegate.html">AppDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DBManager.html">DBManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DataHandler.html">DataHandler</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ViewController.html">ViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/aboutController.html">aboutController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/csvHandler.html">csvHandler</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/idmlGenerator.html">idmlGenerator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/multiSelectController.html">multiSelectController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/textViewWithSC.html">textViewWithSC</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>idmlGenerator</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="nv">idmlGenerator</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+
+                </div>
+              </div>
+            <p>A class to take in a data set and produce an IDML (In Design Markup Language) snippet file in a user-defined location.</p>
+<div class="aside aside-author">
+    <p class="aside-title">Author</p>
+    <p>Tim Colley</p>
+
+</div>
+<div class="aside aside-copyright">
+    <p class="aside-title">Copyright</p>
+    <p>Great Rail Journeys 2018</p>
+
+</div>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15GreatPriceGrids13idmlGeneratorC7numRowsSQySiGvp"></a>
+                    <a name="//apple_ref/swift/Property/numRows" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15GreatPriceGrids13idmlGeneratorC7numRowsSQySiGvp">numRows</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The number of table rows. A dynamic counter to track the progress of the table build.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">numRows</span><span class="p">:</span> <span class="kt">Int</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15GreatPriceGrids13idmlGeneratorC8gridModeSQySiGvp"></a>
+                    <a name="//apple_ref/swift/Property/gridMode" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15GreatPriceGrids13idmlGeneratorC8gridModeSQySiGvp">gridMode</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The grid mode, this determines the number of columns</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">gridMode</span><span class="p">:</span> <span class="kt">Int</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15GreatPriceGrids13idmlGeneratorC7colDefsSSvp"></a>
+                    <a name="//apple_ref/swift/Property/colDefs" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15GreatPriceGrids13idmlGeneratorC7colDefsSSvp">colDefs</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Container for the column definitions</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">colDefs</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15GreatPriceGrids13idmlGeneratorC7rowDefsSSvp"></a>
+                    <a name="//apple_ref/swift/Property/rowDefs" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15GreatPriceGrids13idmlGeneratorC7rowDefsSSvp">rowDefs</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Container for the row definitions</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">rowDefs</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15GreatPriceGrids13idmlGeneratorC8cellDefsSSvp"></a>
+                    <a name="//apple_ref/swift/Property/cellDefs" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15GreatPriceGrids13idmlGeneratorC8cellDefsSSvp">cellDefs</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Container for the cell definitions</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">cellDefs</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15GreatPriceGrids13idmlGeneratorC12numberOfCOLSSivp"></a>
+                    <a name="//apple_ref/swift/Property/numberOfCOLS" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15GreatPriceGrids13idmlGeneratorC12numberOfCOLSSivp">numberOfCOLS</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The number of table columns. A dynamic integer decided by the size of the data array</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">numberOfCOLS</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15GreatPriceGrids13idmlGeneratorC12newRailClassSQySSGvp"></a>
+                    <a name="//apple_ref/swift/Property/newRailClass" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15GreatPriceGrids13idmlGeneratorC12newRailClassSQySSGvp">newRailClass</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>New var for manipulating init parameter railClass</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">newRailClass</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15GreatPriceGrids13idmlGeneratorC10hasFlightsSQySbGvp"></a>
+                    <a name="//apple_ref/swift/Property/hasFlights" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15GreatPriceGrids13idmlGeneratorC10hasFlightsSQySbGvp">hasFlights</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Does the tour have any flights?</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">hasFlights</span><span class="p">:</span> <span class="kt">Bool</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15GreatPriceGrids13idmlGeneratorC11latesBannerSQySbGvp"></a>
+                    <a name="//apple_ref/swift/Property/latesBanner" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15GreatPriceGrids13idmlGeneratorC11latesBannerSQySbGvp">latesBanner</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Does the grid need a Late Departures banner?</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">latesBanner</span><span class="p">:</span> <span class="kt">Bool</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15GreatPriceGrids13idmlGeneratorC7regDepsSQySbGvp"></a>
+                    <a name="//apple_ref/swift/Property/regDeps" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15GreatPriceGrids13idmlGeneratorC7regDepsSQySbGvp">regDeps</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Does the tour have regional departures?</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">regDeps</span><span class="p">:</span> <span class="kt">Bool</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15GreatPriceGrids13idmlGeneratorC7flyHomeSQySbGvp"></a>
+                    <a name="//apple_ref/swift/Property/flyHome" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15GreatPriceGrids13idmlGeneratorC7flyHomeSQySbGvp">flyHome</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Does the grid need any Fly:Home option boxes?</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">flyHome</span><span class="p">:</span> <span class="kt">Bool</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15GreatPriceGrids13idmlGeneratorC14doubleYearModeSQySbGvp"></a>
+                    <a name="//apple_ref/swift/Property/doubleYearMode" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15GreatPriceGrids13idmlGeneratorC14doubleYearModeSQySbGvp">doubleYearMode</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Does the data to be formatted cover two years?</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">doubleYearMode</span><span class="p">:</span> <span class="kt">Bool</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15GreatPriceGrids13idmlGeneratorC16discardTourTitleSQySbGvp"></a>
+                    <a name="//apple_ref/swift/Property/discardTourTitle" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15GreatPriceGrids13idmlGeneratorC16discardTourTitleSQySbGvp">discardTourTitle</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Do we want to discard the tour title (used for tactical brochures)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">discardTourTitle</span><span class="p">:</span> <span class="kt">Bool</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15GreatPriceGrids13idmlGeneratorC7yearOneSSvp"></a>
+                    <a name="//apple_ref/swift/Property/yearOne" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15GreatPriceGrids13idmlGeneratorC7yearOneSSvp">yearOne</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The first year in the date range</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">yearOne</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15GreatPriceGrids13idmlGeneratorC7yearTwoSSvp"></a>
+                    <a name="//apple_ref/swift/Property/yearTwo" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15GreatPriceGrids13idmlGeneratorC7yearTwoSSvp">yearTwo</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The second year in the date range (if the range covers two years)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">yearTwo</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15GreatPriceGrids13idmlGeneratorC4dataSQySaySaySSGGGvp"></a>
+                    <a name="//apple_ref/swift/Property/data" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15GreatPriceGrids13idmlGeneratorC4dataSQySaySaySSGGGvp">data</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The data array</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">data</span><span class="p">:</span> <span class="p">[[</span><span class="kt">String</span><span class="p">]]</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15GreatPriceGrids13idmlGeneratorC3NSSSQySbGvp"></a>
+                    <a name="//apple_ref/swift/Property/NSS" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15GreatPriceGrids13idmlGeneratorC3NSSSQySbGvp">NSS</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Does the tour have a No Single Supplement offer?</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">NSS</span><span class="p">:</span> <span class="kt">Bool</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15GreatPriceGrids13idmlGeneratorC26hasStandardClassDeparturesSbvp"></a>
+                    <a name="//apple_ref/swift/Property/hasStandardClassDepartures" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15GreatPriceGrids13idmlGeneratorC26hasStandardClassDeparturesSbvp">hasStandardClassDepartures</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Does the tour have Standard Class departures?</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">hasStandardClassDepartures</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15GreatPriceGrids13idmlGeneratorC8buldGridySS9tourTitle_SS8durationSS17departureLocationSS0H4CodeSS9railClassSS3rdlSS3rdpSS10smallPrintSS7depositSS10singlesuppSb10LatesPanelSb10HasFlightsSb7RegDepsSb7FlyHomeSb14DoubleYearModeSb011DiscardTourI0SS7YearOneSS7YearTwoSaySaySSGG4dataSb0x8StandardO10DeparturesSS05firstO5ValuetF"></a>
+                    <a name="//apple_ref/swift/Method/buldGrid(tourTitle:duration:departureLocation:tourCode:railClass:rdl:rdp:smallPrint:deposit:singlesupp:LatesPanel:HasFlights:RegDeps:FlyHome:DoubleYearMode:DiscardTourTitle:YearOne:YearTwo:data:HasStandardClassDepartures:firstClassValue:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15GreatPriceGrids13idmlGeneratorC8buldGridySS9tourTitle_SS8durationSS17departureLocationSS0H4CodeSS9railClassSS3rdlSS3rdpSS10smallPrintSS7depositSS10singlesuppSb10LatesPanelSb10HasFlightsSb7RegDepsSb7FlyHomeSb14DoubleYearModeSb011DiscardTourI0SS7YearOneSS7YearTwoSaySaySSGG4dataSb0x8StandardO10DeparturesSS05firstO5ValuetF">buldGrid(tourTitle:duration:departureLocation:tourCode:railClass:rdl:rdp:smallPrint:deposit:singlesupp:LatesPanel:HasFlights:RegDeps:FlyHome:DoubleYearMode:DiscardTourTitle:YearOne:YearTwo:data:HasStandardClassDepartures:firstClassValue:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Builds a price grid by reading in a header file, building the price grid, closing the table using another file and finally replaceing placeholder data in the output with a search-replace.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">buldGrid</span><span class="p">(</span><span class="nv">tourTitle</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">duration</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">departureLocation</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">tourCode</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">railClass</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">rdl</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">rdp</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">smallPrint</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">deposit</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">singlesupp</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">LatesPanel</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="kt">HasFlights</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="kt">RegDeps</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="kt">FlyHome</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="kt">DoubleYearMode</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="kt">DiscardTourTitle</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="kt">YearOne</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">YearTwo</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">data</span><span class="p">:</span> <span class="p">[[</span><span class="kt">String</span><span class="p">]],</span> <span class="kt">HasStandardClassDepartures</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">firstClassValue</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>tourTitle</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,     The title of the tour</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>duration</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,     The duration of the tour</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>departureLocation</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,     Where the tour departs from</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>tourCode</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,     The tour code</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>railClass</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,     The class of the rail travel on the tour</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>rdl</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,     The list of regional departures locations for this tour</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>rdp</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,     The prices for the regional depature supplements</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>smallPrint</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,     The small print for the bottom of the price grid</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>deposit</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,     The deposit value for the tour</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>singlesupp</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,     The single supplement for the the tour</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>LatesPanel</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>Bool</strong>,       Does the price grind need a &lsquo;Late Departures&rsquo; box?</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>HasFlights</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>Bool</strong>,       Does the tour have flights?</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>RegDeps</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>Bool</strong>,       Does the tour have regional departures?</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>FlyHome</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>Bool</strong>,       Does the price grid need a &lsquo;Fly:Home&rsquo; box?</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>DoubleYearMode</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>Bool</strong>,       Do the departures cover a period of two years?</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>DiscardTourTitle</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>Bool</strong>,       Does the tour title need to be left off of the price grid?</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>YearOne</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,     The year of the departures (in the case of DoubleYearMode being true, this covers the first year on the grid)</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>YearTwo</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,     The second year of departures on the grid (if DoubleYearMode is true)</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>data</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>[[String]]</strong>, The data array</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>HasStandardClassDepartures</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>Bool</strong>,       Does the tour have a &lsquo;Standard Class Rail&rsquo; option?</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>firstClassValue</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,      In the case of HasStandardClassDepartures being true, this is the main rail class (not Standard)</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>void</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15GreatPriceGrids13idmlGeneratorC13buildIDMLGridSSSi8gridSize_Sb10doubleYearSb15removeTourTitleSb11latesBannerSb18regionalDeparturesSb10hasFlightsSb7flyHomeSS7yearOneSS0W3TwoSaySaySSGG4DatatF"></a>
+                    <a name="//apple_ref/swift/Method/buildIDMLGrid(gridSize:doubleYear:removeTourTitle:latesBanner:regionalDepartures:hasFlights:flyHome:yearOne:yearTwo:Data:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15GreatPriceGrids13idmlGeneratorC13buildIDMLGridSSSi8gridSize_Sb10doubleYearSb15removeTourTitleSb11latesBannerSb18regionalDeparturesSb10hasFlightsSb7flyHomeSS7yearOneSS0W3TwoSaySaySSGG4DatatF">buildIDMLGrid(gridSize:doubleYear:removeTourTitle:latesBanner:regionalDepartures:hasFlights:flyHome:yearOne:yearTwo:Data:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Builds the central data grid based upon data passed to it. Depending upon the data contained and the options provided, it can provide a 2, 3 or 4 column grid with or without Fly:Home option, regional departures, tour titles, standard class rail options in a combination of one or two year layouts. in the case of a 3 column grid, only a 1 year layout applies. It automatially calculates the required number of columns dependent on the nomber of rows that are required. These are set as thresholds that once passed, signals the requirement for a larger grid, although these are overridden if the tour has two years or standard class departures. It returns a string containing IDML code and content to be effectivly &lsquo;sandwiched&rsquo; between the contents of two &lsquo;include&rsquo; files.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">buildIDMLGrid</span><span class="p">(</span><span class="nv">gridSize</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">doubleYear</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">removeTourTitle</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">latesBanner</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">regionalDepartures</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">hasFlights</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">flyHome</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">yearOne</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">yearTwo</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">Data</span><span class="p">:</span> <span class="p">[[</span><span class="kt">String</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>gridSize</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>Int</strong>,         The size of the grid in columns. This is <em>not</em> specified in table columns, but rather in price grid columns. For table columns, multiply by 3.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>doubleYear</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>Bool</strong>,        Is this a double year grid?</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>removeTourTitle</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>Bool</strong>,        Do we want the tour title removing?</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>latesBanner</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>Bool</strong>,        Do we want to add a &lsquo;Lates&rsquo; Banner?</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>regionalDepartures</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>Bool</strong>,        Does this tour need regional departures boxes?</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>hasFlights</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>Bool</strong>,        Does this tour have flights?</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>flyHome</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>Bool</strong>,        Do we need a &lsquo;Fly:Home&rsquo; box?</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>yearOne</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,      The content for the first year header</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>yearTwo</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,      The content for the second year header (if doubleYear id true)</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>Data</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>[[String]]</strong>,  The dates &amp; prices for the grid</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><strong>String</strong>, The output data to be injected into the middle of the table.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15GreatPriceGrids13idmlGeneratorC10addColumnsySi8gridsize_tF"></a>
+                    <a name="//apple_ref/swift/Method/addColumns(gridsize:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15GreatPriceGrids13idmlGeneratorC10addColumnsySi8gridsize_tF">addColumns(gridsize:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Builds the Column definitions for the IDML output according to the required grid size. The width of the columns are statically assgned as IDML parameters to ensure that the table output is always 94mm wide on page.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">addColumns</span><span class="p">(</span><span class="nv">gridsize</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>gridSize</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>Int</strong>, The size of the grid in columns. This is <em>not</em> specified in table columns, but rather in price grid columns. For table columns, multiply by 3.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><strong>String</strong>, The column definitions.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15GreatPriceGrids13idmlGeneratorC12addTourTitleySS3row_SS7colSpantF"></a>
+                    <a name="//apple_ref/swift/Method/addTourTitle(row:colSpan:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15GreatPriceGrids13idmlGeneratorC12addTourTitleySS3row_SS7colSpantF">addTourTitle(row:colSpan:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>builds and returns the IDML required for the tour title element of the table</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">addTourTitle</span><span class="p">(</span><span class="nv">row</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">colSpan</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>row</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,         The row number of this table element. Since IDML requires the the &lsquo;name&rsquo; parameter be used to track the rows and column locations of a cell, this needs to be dynamic.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>colSpan</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,         The number of columns to span, used to provide a horizontally merged cell within a row.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><strong>String</strong>, The tour title element of the table.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15GreatPriceGrids13idmlGeneratorC14addLatesBannerySS3row_SS7colSpantF"></a>
+                    <a name="//apple_ref/swift/Method/addLatesBanner(row:colSpan:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15GreatPriceGrids13idmlGeneratorC14addLatesBannerySS3row_SS7colSpantF">addLatesBanner(row:colSpan:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>builds and returns the IDML required for the &lsquo;Lates Banner&rsquo; element of the table</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">addLatesBanner</span><span class="p">(</span><span class="nv">row</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">colSpan</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>row</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,         The row number of this table element. Since IDML requires the the &lsquo;name&rsquo; parameter be used to track the rows and column locations of a cell, this needs to be dynamic.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>colSpan</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,         The number of columns to span, used to provide a horizontally merged cell within a row.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><strong>String</strong>, The tour &lsquo;Lates Banner&rsquo; of the table.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15GreatPriceGrids13idmlGeneratorC28addDepartureLocationTourCodeySS3row_SS7colSpantF"></a>
+                    <a name="//apple_ref/swift/Method/addDepartureLocationTourCode(row:colSpan:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15GreatPriceGrids13idmlGeneratorC28addDepartureLocationTourCodeySS3row_SS7colSpantF">addDepartureLocationTourCode(row:colSpan:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>builds and returns the IDML required for the departure location element of the table, this element will also house the tour code and the visa information.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">addDepartureLocationTourCode</span><span class="p">(</span><span class="nv">row</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">colSpan</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>row</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,         The row number of this table element. Since IDML requires the the &lsquo;name&rsquo; parameter be used to track the rows and column locations of a cell, this needs to be dynamic.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>colSpan</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,         The number of columns to span, used to provide a horizontally merged cell within a row.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><strong>String</strong>, The departure location element of the table.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15GreatPriceGrids13idmlGeneratorC17addDepartureYearsySS3row_SS7colSpanSb10doubleYeartF"></a>
+                    <a name="//apple_ref/swift/Method/addDepartureYears(row:colSpan:doubleYear:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15GreatPriceGrids13idmlGeneratorC17addDepartureYearsySS3row_SS7colSpanSb10doubleYeartF">addDepartureYears(row:colSpan:doubleYear:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>builds and returns the IDML required for the tour departure years header element of the table</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">addDepartureYears</span><span class="p">(</span><span class="nv">row</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">colSpan</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">doubleYear</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>row</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,         The row number of this table element. Since IDML requires the the &lsquo;name&rsquo; parameter be used to track the rows and column locations of a cell, this needs to be dynamic.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>colSpan</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,         The number of columns to span, used to provide a horizontally merged cell within a row.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><strong>String</strong>, The departure years header element of the table.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15GreatPriceGrids13idmlGeneratorC12addRailClassySS3row_SS7colSpanSb10doubleYeartF"></a>
+                    <a name="//apple_ref/swift/Method/addRailClass(row:colSpan:doubleYear:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15GreatPriceGrids13idmlGeneratorC12addRailClassySS3row_SS7colSpanSb10doubleYeartF">addRailClass(row:colSpan:doubleYear:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>builds and returns the IDML required for the tour rail class header element of the table</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">addRailClass</span><span class="p">(</span><span class="nv">row</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">colSpan</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">doubleYear</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>row</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,         The row number of this table element. Since IDML requires the the &lsquo;name&rsquo; parameter be used to track the rows and column locations of a cell, this needs to be dynamic.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>colSpan</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,         The number of columns to span, used to provide a horizontally merged cell within a row.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><strong>String</strong>, The tour rail class header element of the table.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15GreatPriceGrids13idmlGeneratorC12addDepartureySS3row_SS15leftStrokeColorSi8colStartSS10monthValueSS03dayO0SS05priceO0SS04cellK0tF"></a>
+                    <a name="//apple_ref/swift/Method/addDeparture(row:leftStrokeColor:colStart:monthValue:dayValue:priceValue:cellColor:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15GreatPriceGrids13idmlGeneratorC12addDepartureySS3row_SS15leftStrokeColorSi8colStartSS10monthValueSS03dayO0SS05priceO0SS04cellK0tF">addDeparture(row:leftStrokeColor:colStart:monthValue:dayValue:priceValue:cellColor:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>builds and returns the IDML required for one departure. This function allows specification for various options such as stroke and fill colours. it retuns a configured block of three cells.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">addDeparture</span><span class="p">(</span><span class="nv">row</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">leftStrokeColor</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">colStart</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">monthValue</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">dayValue</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">priceValue</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">cellColor</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>row</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>, The row number of this table element. Since IDML requires the the &lsquo;name&rsquo; parameter be used to track the rows and column locations of a cell, this needs to be dynamic.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>leftStrokeColor</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>, The left hand stroke colour of the last cell in the block, can be White for inside a single year, Black for seperating years or Regular for the last stroke in the row.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>colStart</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>Int</strong>,    The starting column for the block. Since we are not generating the entire row, we need to know where to start these cells off from.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>monthValue</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>, The value of the Month field in the block.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>dayValue</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>, The value of the day(s) field in the block.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>priceValue</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>, The value of the price field in the block.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>cellColor</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>, The fill colour of the block.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><strong>String</strong>, The departure: a block of three cells to append to the grid.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15GreatPriceGrids13idmlGeneratorC16addFlyHomeOptionySS3row_SS7colSpanSb10doubleYeartF"></a>
+                    <a name="//apple_ref/swift/Method/addFlyHomeOption(row:colSpan:doubleYear:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15GreatPriceGrids13idmlGeneratorC16addFlyHomeOptionySS3row_SS7colSpanSb10doubleYeartF">addFlyHomeOption(row:colSpan:doubleYear:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>builds and returns the IDML required for fly:home option cells</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">addFlyHomeOption</span><span class="p">(</span><span class="nv">row</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">colSpan</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">doubleYear</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>row</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,         The row number of this table element. Since IDML requires the the &lsquo;name&rsquo; parameter be used to track the rows and column locations of a cell, this needs to be dynamic.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>colSpan</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,         The number of columns to span, used to provide a horizontally merged cell within a row.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><strong>String</strong>, The fly:home option element of the table.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15GreatPriceGrids13idmlGeneratorC29addRegionalDepartureLocationsySS3row_SS7colSpantF"></a>
+                    <a name="//apple_ref/swift/Method/addRegionalDepartureLocations(row:colSpan:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15GreatPriceGrids13idmlGeneratorC29addRegionalDepartureLocationsySS3row_SS7colSpantF">addRegionalDepartureLocations(row:colSpan:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>builds and returns the IDML required for regional departures locations option row</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">addRegionalDepartureLocations</span><span class="p">(</span><span class="nv">row</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">colSpan</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>row</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,         The row number of this table element. Since IDML requires the the &lsquo;name&rsquo; parameter be used to track the rows and column locations of a cell, this needs to be dynamic.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>colSpan</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,         The number of columns to span, used to provide a horizontally merged cell within a row.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><strong>String</strong>, The regional departures locations element of the table.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15GreatPriceGrids13idmlGeneratorC26addRegionalDeparturePricesySS3row_SS7colSpantF"></a>
+                    <a name="//apple_ref/swift/Method/addRegionalDeparturePrices(row:colSpan:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15GreatPriceGrids13idmlGeneratorC26addRegionalDeparturePricesySS3row_SS7colSpantF">addRegionalDeparturePrices(row:colSpan:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>builds and returns the IDML required for regional departures option supplement prices row</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">addRegionalDeparturePrices</span><span class="p">(</span><span class="nv">row</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">colSpan</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>row</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,         The row number of this table element. Since IDML requires the the &lsquo;name&rsquo; parameter be used to track the rows and column locations of a cell, this needs to be dynamic.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>colSpan</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,         The number of columns to span, used to provide a horizontally merged cell within a row.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><strong>String</strong>, The regional departures supplement prices element of the table.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15GreatPriceGrids13idmlGeneratorC9addSpacerySS3row_SS7colSpantF"></a>
+                    <a name="//apple_ref/swift/Method/addSpacer(row:colSpan:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15GreatPriceGrids13idmlGeneratorC9addSpacerySS3row_SS7colSpantF">addSpacer(row:colSpan:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>builds and returns the IDML required for a spacer row, this type of row will alway be spanned across all columns and be exactly 1.035mm high</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">addSpacer</span><span class="p">(</span><span class="nv">row</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">colSpan</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>row</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,         The row number of this table element. Since IDML requires the the &lsquo;name&rsquo; parameter be used to track the rows and column locations of a cell, this needs to be dynamic.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>colSpan</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,         The number of columns to span, used to provide a horizontally merged cell within a row.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><strong>String</strong>, A spacer element for the table.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15GreatPriceGrids13idmlGeneratorC14addDepositAreaySS3row_SS7colSpanSS7contenttF"></a>
+                    <a name="//apple_ref/swift/Method/addDepositArea(row:colSpan:content:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15GreatPriceGrids13idmlGeneratorC14addDepositAreaySS3row_SS7colSpanSS7contenttF">addDepositArea(row:colSpan:content:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>builds and returns the IDML required for the deposit area. this will contain the single supplement and the deposit as well as other supplementory information</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">addDepositArea</span><span class="p">(</span><span class="nv">row</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">colSpan</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">content</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>row</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,         The row number of this table element. Since IDML requires the the &lsquo;name&rsquo; parameter be used to track the rows and column locations of a cell, this needs to be dynamic.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>colSpan</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,         The number of columns to span, used to provide a horizontally merged cell within a row.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>content</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,      The content for the deposit area.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><strong>String</strong>, A spacer element for the table.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15GreatPriceGrids13idmlGeneratorC13addSmallPrintySS3row_SS7colSpantF"></a>
+                    <a name="//apple_ref/swift/Method/addSmallPrint(row:colSpan:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15GreatPriceGrids13idmlGeneratorC13addSmallPrintySS3row_SS7colSpantF">addSmallPrint(row:colSpan:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>builds and returns the IDML required for the small print element of the table</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">addSmallPrint</span><span class="p">(</span><span class="nv">row</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">colSpan</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>row</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,         The row number of this table element. Since IDML requires the the &lsquo;name&rsquo; parameter be used to track the rows and column locations of a cell, this needs to be dynamic.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>colSpan</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,         The number of columns to span, used to provide a horizontally merged cell within a row.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><strong>String</strong>, the small print element for the table.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15GreatPriceGrids13idmlGeneratorC11addTableDefS2S4rows_SS4colstF"></a>
+                    <a name="//apple_ref/swift/Method/addTableDef(rows:cols:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15GreatPriceGrids13idmlGeneratorC11addTableDefS2S4rows_SS4colstF">addTableDef(rows:cols:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>builds and returns the IDML required for the table definition. This specifies all options in IDML for the table including columns &amp; rows</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">addTableDef</span><span class="p">(</span><span class="nv">rows</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">cols</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>rows</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,         The number of rows required by the table</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>cols</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,         The number of columns required by the table</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><strong>String</strong>, the table definition.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15GreatPriceGrids13idmlGeneratorC9addRowDefS2S5ownID_SS4nameSS12textTopInsetSS0l4LeftN0SS0l6BottomN0SS0l5RightN0SS21clipContentToTextCellSS06singleG6HeightSS07minimumX0SS8autoGrowtF"></a>
+                    <a name="//apple_ref/swift/Method/addRowDef(ownID:name:textTopInset:textLeftInset:textBottomInset:textRightInset:clipContentToTextCell:singleRowHeight:minimumHeight:autoGrow:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15GreatPriceGrids13idmlGeneratorC9addRowDefS2S5ownID_SS4nameSS12textTopInsetSS0l4LeftN0SS0l6BottomN0SS0l5RightN0SS21clipContentToTextCellSS06singleG6HeightSS07minimumX0SS8autoGrowtF">addRowDef(ownID:name:textTopInset:textLeftInset:textBottomInset:textRightInset:clipContentToTextCell:singleRowHeight:minimumHeight:autoGrow:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>builds and returns the IDML required for a row definition. IDML requires that the row definitions are listed <em>before</em> the cell definitions, unlike HTML where cell definition is implicit. This means that row definitions, although created dynamically, are stored in a seperate holding variable at the top level of the class, then added to the output <em>before</em> the cell definitions</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">addRowDef</span><span class="p">(</span><span class="nv">ownID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">textTopInset</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">textLeftInset</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">textBottomInset</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">textRightInset</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">clipContentToTextCell</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">singleRowHeight</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">minimumHeight</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">autoGrow</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>ownID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,    Not used, should be <em>&ldquo;&rdquo;</em></p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,    Used for the row number, provided by a counter that keeps track of the progress through the table in the parant function</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>textTopInset</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,    The top side cell padding for the cells in the row</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>textLeftInset</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,    The left side cell padding for cells in the row</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>textBottomInset</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,    The bottom cell padding for cells in the row</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>textRightInset</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,    The right side cell padding for cells in the row</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>clipContentToTextCell</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,    The clipping mode, if set to <em>&lsquo;true&rsquo;</em> then this will block overflow errors in preflight</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>singleRowHeight</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,    The default height of the row. This is not calculated in mm, specified as a <em>String(Double)</em></p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>minimumHeight</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,    The minimum height that the cell should be.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>autoGrow</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,    The autogrow function lets a cell expand for additional content. if setting to true, use <em>&lsquo;autogrow=<q>true</q>&rsquo;</em> not <em>&lsquo;true&rsquo;</em> as the IDML tag isn&rsquo;t be included in the default output.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><strong>String</strong>, the row definition.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15GreatPriceGrids13idmlGeneratorC9addColDefS2S5ownID_SS4nameSS12textTopInsetSS0l4LeftN0SS0l6BottomN0SS0l5RightN0SS21clipContentToTextCellSS17singleColumnWidthtF"></a>
+                    <a name="//apple_ref/swift/Method/addColDef(ownID:name:textTopInset:textLeftInset:textBottomInset:textRightInset:clipContentToTextCell:singleColumnWidth:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15GreatPriceGrids13idmlGeneratorC9addColDefS2S5ownID_SS4nameSS12textTopInsetSS0l4LeftN0SS0l6BottomN0SS0l5RightN0SS21clipContentToTextCellSS17singleColumnWidthtF">addColDef(ownID:name:textTopInset:textLeftInset:textBottomInset:textRightInset:clipContentToTextCell:singleColumnWidth:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>builds and returns the IDML required for column definition.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">addColDef</span><span class="p">(</span><span class="nv">ownID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">textTopInset</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">textLeftInset</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">textBottomInset</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">textRightInset</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">clipContentToTextCell</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">singleColumnWidth</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>ownID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,    Not used, should be <em>&ldquo;&rdquo;</em></p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,    Used for the column number</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>textTopInset</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,    The top side cell padding for the cells in the column</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>textLeftInset</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,    The left side cell padding for cells in the column</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>textBottomInset</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,    The bottom cell padding for cells in the column</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>textRightInset</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,    The right side cell padding for cells in the column</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>clipContentToTextCell</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,    The clipping mode, if set to <em>&lsquo;true&rsquo;</em> then this will block overflow errors in preflight</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>singleColumnWidth</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,    The width of the column, Explicitly set depending on the numbers of columns required and the content housed in them</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><strong>String</strong>, the column definition.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15GreatPriceGrids13idmlGeneratorC8endTableSSyF"></a>
+                    <a name="//apple_ref/swift/Method/endTable()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15GreatPriceGrids13idmlGeneratorC8endTableSSyF">endTable()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>builds and returns the IDML required for column definition.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">endTable</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><strong>String</strong>, a simple string to close out the table build in IDML</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15GreatPriceGrids13idmlGeneratorC7addCellS2S5ownID_SS4nameSS7rowSpanSS03colL0SS8cellTypeSS12textTopInsetSS0p4LeftR0SS0p6BottomR0SS0p5RightR0SS07appliedG5StyleSS0v9ParagraphW0SS0v9CharacterW0SS7contenttF"></a>
+                    <a name="//apple_ref/swift/Method/addCell(ownID:name:rowSpan:colSpan:cellType:textTopInset:textLeftInset:textBottomInset:textRightInset:appliedCellStyle:appliedParagraphStyle:appliedCharacterStyle:content:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15GreatPriceGrids13idmlGeneratorC7addCellS2S5ownID_SS4nameSS7rowSpanSS03colL0SS8cellTypeSS12textTopInsetSS0p4LeftR0SS0p6BottomR0SS0p5RightR0SS07appliedG5StyleSS0v9ParagraphW0SS0v9CharacterW0SS7contenttF">addCell(ownID:name:rowSpan:colSpan:cellType:textTopInset:textLeftInset:textBottomInset:textRightInset:appliedCellStyle:appliedParagraphStyle:appliedCharacterStyle:content:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>builds and returns the IDML required for cell definition.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">addCell</span><span class="p">(</span><span class="nv">ownID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">rowSpan</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">colSpan</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">cellType</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">textTopInset</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">textLeftInset</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">textBottomInset</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">textRightInset</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">appliedCellStyle</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">appliedParagraphStyle</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">appliedCharacterStyle</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">content</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>ownID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,    Not used, should be <em>&ldquo;&rdquo;</em></p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,    Used for the column number and the row number, relates the cell to them by (col):(row), eg 1:1, 2:1, 3:1 etc.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>rowSpan</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,    How many cells to merge down or up</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>colSpan</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,    How many cells to merge across</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>cellType</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,    The cell type, text, image, interactive etc.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>textTopInset</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,    The top side cell padding for the cells in the column</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>textLeftInset</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,    The left side cell padding for cells in the column</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>textBottomInset</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,    The bottom cell padding for cells in the column</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>textRightInset</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,    The right side cell padding for cells in the column</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>appliedCellStyle</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,    The cell style to be used with this cell. Price, Day, Month, Class, TourTitle etc&hellip;</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>appliedParagraphStyle</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,    The paragraph style to be applied, if &ldquo;&rdquo; then it&rsquo;s usually inherited from the cell style anyway</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>appliedCharacterStyle</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,    The character style to use. this should <em>always</em> be &ldquo;&rdquo; as any style here will override the paragraph and cell styles</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>content</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><strong>String</strong>,    The content to be housed in teh cell.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><strong>String</strong>, the column definition.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2018-06-20)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

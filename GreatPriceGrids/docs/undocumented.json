@@ -1,0 +1,40 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/timcolley/Desktop/StudioTools 3 Code/GreatPriceGrids/GreatPriceGrids/AppDelegate.swift",
+      "line": 22,
+      "symbol": "AppDelegate",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/timcolley/Desktop/StudioTools 3 Code/GreatPriceGrids/GreatPriceGrids/DataHandler.swift",
+      "line": 140,
+      "symbol": "DataHandler.getStandardOptionStatus()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/timcolley/Desktop/StudioTools 3 Code/GreatPriceGrids/GreatPriceGrids/ViewController.swift",
+      "line": 33,
+      "symbol": "ViewController.flightsOverrideValue",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/timcolley/Desktop/StudioTools 3 Code/GreatPriceGrids/GreatPriceGrids/textViewWithSC.swift",
+      "line": 22,
+      "symbol": "textViewWithSC.commandKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/timcolley/Desktop/StudioTools 3 Code/GreatPriceGrids/GreatPriceGrids/textViewWithSC.swift",
+      "line": 23,
+      "symbol": "textViewWithSC.commandShiftKey",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/timcolley/Desktop/StudioTools 3 Code/GreatPriceGrids"
+}
