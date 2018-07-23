@@ -16,3 +16,4 @@ Fixed a bug that would cause the app to crash when selecting an RD layout grid o
 Known issues:
 Selecting an RD layout option will result in a malformed price grid.
 Selecting an RD layout option will result in reduced optionals in the interface but these are not disabled.
+
