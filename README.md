@@ -5,6 +5,26 @@ A Swift / SQLite / IDML based Price Grid Generator. This project uses FMDB by Fl
 
 What's new?
 Updated the core module for producing RD Grids.
+Refactored code the balances the left and right hand sides of the grid, this is much better now.
+finished the RD IDML Generation
+
+Bugs Fixed:
+Selecting more than 15 RD departures results in a malformed grid.
+Incorrect colouring on alternate lines. this has also been refactored.
+Selecting less than 15 RD departures will return all departures within the tours range.
+A selection of a second years departures give an out of bounds exception.
+
+Known Issues:
+Tab stops are unable to be replicated dynamically due to the limitations of the code. The offending tabs have been replaced with a hyphen.
+
+
+-----------
+
+
+23-Jul-2018
+
+What's new?
+Updated the core module for producing RD Grids.
 Refactored the code that determines the type of grid that is used. this is now decide much earlier.
 Added several methods for producing RD Branded IDML code.
 
