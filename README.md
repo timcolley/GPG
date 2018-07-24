@@ -1,7 +1,7 @@
 # GPG
 A Swift / SQLite / IDML based Price Grid Generator. This project uses FMDB by FlyingMeat. https://ccgus.github.io/fmdb/
 
-23-Jul-2018
+24-Jul-2018
 
 What's new?
 Updated the core module for producing RD Grids.
